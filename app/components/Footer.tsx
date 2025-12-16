@@ -14,7 +14,9 @@ export function Footer() {
           <p className="font-semibold text-slate-800">Bridge</p>
           <p className="mt-2 text-slate-600">Systems × Practice</p>
           <p className="mt-2 text-slate-500">
-            {language === 'zh' ? '讓系統清晰，讓呼吸平穩。' : 'Keep the work clear. Keep the breath steady.'}
+            {language === 'zh'
+              ? '讓理性透明，也讓覺知落地。'
+              : 'Keep systems transparent and practice grounded.'}
           </p>
         </div>
         <div className="flex flex-wrap gap-3 sm:justify-end">
