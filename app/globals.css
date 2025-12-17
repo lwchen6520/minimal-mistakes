@@ -8,8 +8,10 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at 20% 20%, rgba(74, 127, 224, 0.07), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(245, 138, 79, 0.08), transparent 28%),
+  background:
+    radial-gradient(circle at 20% 20%, rgba(111, 179, 209, 0.07), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(243, 184, 163, 0.08), transparent 28%),
+    linear-gradient(135deg, rgba(233, 246, 243, 0.8), rgba(250, 245, 239, 0.8)),
     #f8fafc;
   color: #0f172a;
 }
@@ -19,7 +21,7 @@ body {
 }
 
 .card-surface {
-  @apply rounded-3xl bg-white/80 backdrop-blur shadow-subtle border border-slate-100 transition transform;
+  @apply rounded-[28px] bg-white/85 backdrop-blur shadow-subtle border border-slate-100 transition transform;
 }
 
 .card-surface:hover {
@@ -27,30 +29,45 @@ body {
 }
 
 .soft-gradient-tech {
-  background: linear-gradient(135deg, rgba(74, 127, 224, 0.1), rgba(35, 59, 105, 0.05));
+  background: linear-gradient(160deg, rgba(111, 179, 209, 0.12), rgba(120, 188, 167, 0.08));
 }
 
 .soft-gradient-warm {
-  background: linear-gradient(135deg, rgba(245, 138, 79, 0.1), rgba(115, 56, 33, 0.05));
+  background: linear-gradient(160deg, rgba(243, 184, 163, 0.15), rgba(239, 210, 170, 0.08));
 }
 
 svg.pattern {
-  opacity: 0.35;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
+  opacity: 0.28;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.04));
 }
 
 input, textarea, select {
-  @apply rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tech-300 focus:border-transparent transition;
+  @apply rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-transparent transition;
 }
 
 button.primary {
-  @apply rounded-2xl bg-tech-700 text-white px-4 py-2 text-sm font-semibold hover:bg-tech-600 focus:ring-2 focus:ring-tech-400 focus:outline-none transition shadow-subtle;
+  @apply rounded-2xl bg-slate-900 text-white px-4 py-2 text-sm font-semibold hover:bg-slate-800 focus:ring-2 focus:ring-slate-400 focus:outline-none transition shadow-subtle;
 }
 
 button.secondary {
-  @apply rounded-2xl bg-warmth-600 text-white px-4 py-2 text-sm font-semibold hover:bg-warmth-500 focus:ring-2 focus:ring-warmth-300 focus:outline-none transition shadow-subtle;
+  @apply rounded-2xl bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none transition shadow-subtle;
 }
 
 .tag-pill {
   @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200;
+}
+
+.reveal-soft {
+  animation: breathe-in 0.9s ease both;
+}
+
+@keyframes breathe-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
