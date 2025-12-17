@@ -14,11 +14,11 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-2 font-semibold text-slate-900">
           <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-tech-200 to-warmth-200 shadow-subtle flex items-center justify-center text-sm text-tech-800">
-            BR
+            LJ
           </div>
           <div className="leading-tight">
-            <p className="text-sm text-slate-600">Bridge</p>
-            <p className="text-xs text-slate-500">Systems × Practice</p>
+            <p className="text-sm text-slate-600">Liv · Sonia</p>
+            <p className="text-xs text-slate-500">Practice daily · Live gently</p>
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm text-slate-700">

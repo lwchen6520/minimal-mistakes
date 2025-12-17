@@ -1,47 +1,47 @@
 export type Language = 'zh' | 'en';
 
 export const taglines = {
-  zh: '讓理性的系統清楚透明，也讓內在的修行落在日常。',
-  en: 'Make systems transparent and keep practice grounded in daily life.',
+  zh: '把修行變成日常，把日常變成修行。',
+  en: 'Practice daily. Live gently. Stay grounded.',
 };
 
 export const howIWork = [
   {
-    key: 'discover',
-    zh: { title: 'Discover', description: '與決策者、工程師與使用者共筆問題陳述，讓語言先對齊。' },
+    key: 'observe',
+    zh: { title: 'Observe', description: '先陪你看見呼吸、姿勢、節氣帶來的訊號，記錄現況而不批判。' },
     en: {
-      title: 'Discover',
-      description: 'Co-write the problem with leaders, engineers, and users so language is aligned first.',
+      title: 'Observe',
+      description: 'Notice breath, posture, and seasonal cues without judgment; hold a clear snapshot of now.',
     },
   },
   {
-    key: 'design',
-    zh: { title: 'Design', description: '畫出流程、資料與權限的節奏，也標注專注與覺察需要被維護的點。' },
+    key: 'regulate',
+    zh: { title: 'Regulate', description: '用短呼吸與身體微動作穩住系統，讓神經可以回到可回應的狀態。' },
     en: {
-      title: 'Design',
-      description: 'Map process, data, and permissions, noting where focus and awareness must be protected.',
+      title: 'Regulate',
+      description: 'Stabilize with short breaths and gentle movements so the nervous system can respond, not react.',
     },
   },
   {
-    key: 'deliver',
+    key: 'integrate',
     zh: {
-      title: 'Deliver',
-      description: '敏捷迭代導入自動化與儀表板，同步安排團隊節奏與覺察練習。',
+      title: 'Integrate',
+      description: '把練習放進日常節奏：會議前 3 分鐘、節氣轉換的一週，累積可重複的儀式。',
     },
     en: {
-      title: 'Deliver',
-      description: 'Ship automation and dashboards in agile loops while setting team rituals for awareness.',
+      title: 'Integrate',
+      description: 'Place practice into routine: three minutes before meetings, a week around each solar term, repeatable rituals.',
     },
   },
   {
-    key: 'debrief',
+    key: 'return',
     zh: {
-      title: 'Debrief',
-      description: '複盤決策、記錄例外與感受，讓系統與人都能在可持續的節奏中呼吸。',
+      title: 'Return',
+      description: '回到身體的可信度：以筆記與反思複盤，確認節奏可持續，而不是一次性的激情。',
     },
     en: {
-      title: 'Debrief',
-      description: 'Review decisions, document exceptions and sensations, so systems and people breathe sustainably.',
+      title: 'Return',
+      description: 'Return to bodily trust: debrief with notes so rhythm stays sustainable instead of one-off intensity.',
     },
   },
 ];
@@ -49,73 +49,74 @@ export const howIWork = [
 export const aboutSections = {
   zh: [
     {
-      title: '橋接理性與修行',
+      title: '我如何走向修行',
       body:
-        '我是一位橫跨理性系統與內在修行的橋接者。科技不只是工具，靈性也不是逃避；兩邊都需要耐心與紀律，才能被整合進日常工作與生活。',
+        '在專案管理的強度中，身體曾經緊到睡不著。瑜珈與冥想讓我看見：調息與覺察是一條回家的路。從此，我不再把修行當成逃避，而是與生活並行。',
     },
     {
-      title: '專業與方法',
+      title: '我如何把修行變成日常',
       body:
-        '關心 SAP、RPA、Power BI、AI 認證與系統導入，問的總是「為什麼這樣設計」「可否擴充」「管理層如何理解」。重視可交付物、節奏與里程碑，也重視語言是否讓不同角色真正聽懂。',
+        '以節氣為節拍、呼吸為尺標，設計 3–15 分鐘可實做的步驟：呼吸、觀照、筆記。就像管理專案一樣，設定可追蹤的 ritural 與復盤，讓練習可持續。',
     },
     {
-      title: '節氣與覺知',
+      title: '我如何陪伴初學者',
       body:
-        '對時間、節氣、身體與意識敏銳，關注 24 節氣、臟腑、呼吸、瑜珈與藏傳佛教次第。不是浪漫式收集，而是要求結構化、可實修、可落地，讓練習能被日常承載。',
+        '我陪你建立自己的步驟，重點是「可被身體接受」。不診斷、不替代醫療，只提供可操作的呼吸與觀照提示，並尊重你的界線與步調。',
     },
   ],
   en: [
     {
-      title: 'Bridge systems and practice',
+      title: 'How I walked into practice',
       body:
-        'A bridge between rational systems and inner work. Technology is more than tools and spirituality is not an escape—both need patience and discipline to live in daily work.',
+        'Project pressure once tightened my body so much that sleep was scarce. Breathwork and meditation showed me a way home. Practice became a parallel track to life, not an escape.',
     },
     {
-      title: 'Methods and delivery',
+      title: 'How I turn practice into daily life',
       body:
-        'Focused on SAP, RPA, Power BI, and AI rollouts, always asking “why this design,” “can it scale,” and “will leadership understand.” I care about deliverables, cadence, and milestones—and making sure every role truly hears each other.',
+        'Using solar terms as cadence and breath as a ruler, I design 3–15 minute steps: breathe, notice, jot. Like project management, I set traceable rituals and retros so practice is sustainable.',
     },
     {
-      title: 'Seasonal awareness',
+      title: 'How I hold beginners',
       body:
-        'Sensitive to time, solar terms, body, and awareness. I study the 24 solar terms, organs, breathwork, yoga, and Tibetan Buddhist progressions—not as romantic collecting but as structured, practicable routines that daily life can hold.',
+        'I co-design steps your body can accept. No diagnoses, no replacing medical care—just actionable breath and awareness cues that respect your pace and boundaries.',
     },
   ],
 };
 
 export const timeline = [
   {
-    year: '2016',
-    zh: '在大型製造業擔任 PM，負責 SAP 模組整合，體會到流程與語言一致的重要性。',
-    en: 'PM at a major manufacturer, aligning SAP modules and seeing how process clarity relies on shared language.',
+    year: '2014',
+    zh: '開始接觸瑜珈與正念，發現呼吸是讓身體開口的語言。',
+    en: 'Discovered yoga and mindfulness; breath became the language my body trusted.',
+  },
+  {
+    year: '2017',
+    zh: '進修節氣與臟腑學，開始以季節記錄身心變化，練習以日記復盤。',
+    en: 'Studied solar terms and organ patterns; began logging seasonal body shifts and nightly reflections.',
   },
   {
     year: '2019',
-    zh: '帶領跨部門導入 RPA 與報表自動化，設計例外與權限治理，讓月結時間縮短 30%。',
-    en: 'Led cross-functional RPA and reporting automation with exception and permission design, cutting month-end by 30%.',
+    zh: '受訓成為正念呼吸與初階冥想帶領者，開始帶小型社群練習。',
+    en: 'Trained to guide mindful breathing and intro meditation, leading small community circles.',
   },
   {
-    year: '2021',
-    zh: '建立 Power BI 語意層與資料治理框架，協助管理層理解指標的血緣與可信度。',
-    en: 'Built Power BI semantic layers and governance, helping leadership trust metric lineage and credibility.',
+    year: '2022',
+    zh: '將節氣練習與專案節奏結合，設計「今日練習卡」模板，讓同事能自己選擇節奏。',
+    en: 'Merged solar-term practice with project cadences, designing “daily practice cards” teammates could self-select.',
   },
   {
-    year: '2023',
-    zh: '研究生成式 AI 在文件與流程的落地，設計小型代理與回饋 loop，讓協作有責任界線。',
-    en: 'Explored generative AI for documents and workflows, designing lightweight agents and feedback loops with clear accountability.',
-  },
-  {
-    year: '修行路',
-    zh: '十年瑜珈與靜心練習，研究藏傳佛教次第，也帶領週末覺察小組，讓節奏回到呼吸與生活。',
-    en: 'Ten years of yoga and mindfulness, studying Tibetan Buddhist progressions and leading awareness circles so rhythm returns to breath and daily life.',
+    year: 'Now',
+    zh: '以 Liv Jaijot Kaur (Sonia Chen) 的身份陪伴初學者，讓修行與日常互相滋養。',
+    en: 'Now accompanying beginners as Liv Jaijot Kaur (Sonia Chen), letting practice and daily life nourish each other.',
   },
 ];
 
 export const navLinks = [
   { href: '/', key: 'home', zh: '首頁', en: 'Home' },
-  { href: '/work', key: 'work', zh: 'Systems', en: 'Systems' },
-  { href: '/practice', key: 'practice', zh: 'Practice', en: 'Practice' },
-  { href: '/writing', key: 'writing', zh: 'Writing', en: 'Writing' },
+  { href: '/daily-practice', key: 'daily-practice', zh: '每日練習', en: 'Daily Practice' },
+  { href: '/solar-terms', key: 'solar-terms', zh: '節氣', en: 'Solar Terms' },
+  { href: '/practice-library', key: 'practice-library', zh: '練習庫', en: 'Practice Library' },
+  { href: '/writing', key: 'writing', zh: '修行筆記', en: 'Writing' },
   { href: '/about', key: 'about', zh: '關於', en: 'About' },
   { href: '/contact', key: 'contact', zh: '聯絡', en: 'Contact' },
 ];
