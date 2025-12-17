@@ -1,171 +1,72 @@
-export type Post = {
+import type { Language } from './site';
+
+type Category = '節氣筆記' | '呼吸與覺察' | '修行困惑' | '生活整合';
+
+export interface Post {
   id: string;
-  title: { zh: string; en: string };
-  category: 'Product' | 'Automation' | 'Data' | 'Mindfulness';
-  summary: { zh: string; en: string };
-};
+  category: Category;
+  title: Record<Language, string>;
+  summary: Record<Language, string>;
+  tags: string[];
+  readTime: string;
+}
 
 export const posts: Post[] = [
   {
-    id: 'product-bridges',
-    title: { zh: '產品決策的「橋接」練習', en: 'Bridgework in product decisions' },
-    category: 'Product',
+    id: 'spring-breath',
+    category: '節氣筆記',
+    title: { zh: '立春：把怒氣變行動的 3 步', en: 'Beginning of Spring: three steps to turn frustration into action' },
     summary: {
-      zh: '如何在高層願景與現場現實之間搭橋，寫出被理解的 PRD。',
-      en: 'How to bridge vision and reality so PRDs land with every stakeholder.',
+      zh: '從肩帶鬆開、膽經拍打到短筆記，記錄我如何在立春安頓暴衝感。',
+      en: 'Softening shoulders, tapping the gallbladder meridian, and quick journaling to steady the rush of Spring.',
     },
+    tags: ['立春', '肝', '轉換'],
+    readTime: '6 分鐘',
   },
   {
-    id: 'automation-guardrails',
-    title: { zh: 'RPA 導入的護欄設計', en: 'Designing guardrails for RPA' },
-    category: 'Automation',
+    id: 'rainy-focus',
+    category: '呼吸與覺察',
+    title: { zh: '雨水：濕氣重的日子，呼吸要慢', en: 'Rain Water: slower breath on damp days' },
     summary: {
-      zh: '在例外處理與權限治理上先下功夫，讓自動化活得久。',
-      en: 'Invest first in exceptions and permissions so bots stay healthy.',
+      zh: '分享 10 分鐘暖胃調息的節奏，並附上濕冷時容易忽略的注意事項。',
+      en: 'A 10-minute warm-belly breath rhythm with reminders for damp, cold mornings.',
     },
+    tags: ['雨水', '脾胃', '調息'],
+    readTime: '5 分鐘',
   },
   {
-    id: 'data-semantics',
-    title: { zh: '語意層：比工具更難也更值得', en: 'Semantic layers are hard and worth it' },
-    category: 'Data',
+    id: 'doubt-path',
+    category: '修行困惑',
+    title: { zh: '當覺察變得很用力時，我怎麼停下來', en: 'When awareness feels forceful, how I pause' },
     summary: {
-      zh: '如何讓不同部門共享指標定義，避免「數字戰爭」。',
-      en: 'Sharing metric definitions across teams to avoid number wars.',
+      zh: '記錄一次練習過度用力的經驗，以及我如何回到「Observe → Regulate → Integrate → Return」。',
+      en: 'A story of over-efforting in practice and returning to Observe → Regulate → Integrate → Return.',
     },
+    tags: ['調節', '溫柔提醒'],
+    readTime: '7 分鐘',
   },
   {
-    id: 'mindfulness-breath',
-    title: { zh: '呼吸是最小可行的專注肌肉', en: 'Breath as the smallest focus muscle' },
-    category: 'Mindfulness',
+    id: 'desk-integration',
+    category: '生活整合',
+    title: { zh: '辦公桌旁的 5 分鐘修行角落', en: 'A 5-minute practice corner by the desk' },
     summary: {
-      zh: '用四拍呼吸作為日常開機，讓思緒回到身體。',
-      en: 'Use four-count breathing as a daily boot sequence to return to the body.',
+      zh: '用一張椅子、一杯溫水與一支筆，串起日常可重複的修行節奏。',
+      en: 'Chair, warm water, and a pen—building a repeatable practice rhythm next to the laptop.',
     },
+    tags: ['日常', '儀式感'],
+    readTime: '4 分鐘',
   },
   {
-    id: 'product-story',
-    title: { zh: '故事結構化：從用戶旅程到決策切面', en: 'Structured stories from journey to decision' },
-    category: 'Product',
+    id: 'sleep-gentle',
+    category: '呼吸與覺察',
+    title: { zh: '睡前心浮的夜晚，如何落地', en: 'Grounding floaty nights before sleep' },
     summary: {
-      zh: '用旅程拆解需求，再用決策表處理複雜度。',
-      en: 'Break down needs with journeys, then manage complexity with decision tables.',
+      zh: '分享「落地睡前儀式」的 10 分鐘腳本，包含呼吸、身體掃描與結束語。',
+      en: 'The 10-minute bedtime ritual script with breath, body scan, and gentle closing words.',
     },
-  },
-  {
-    id: 'automation-measure',
-    title: { zh: '衡量自動化：不只看節省人力', en: 'Measuring automation beyond headcount' },
-    category: 'Automation',
-    summary: {
-      zh: '回顧錯誤率、例外處理時間與團隊情緒，才是真的 ROI。',
-      en: 'Track error rate, exception time, and team morale to see true ROI.',
-    },
-  },
-  {
-    id: 'data-visual',
-    title: { zh: '儀表板的閱讀體驗設計', en: 'Reading experience for dashboards' },
-    category: 'Data',
-    summary: {
-      zh: '用顏色與留白引導注意力，讓決策節奏更穩。',
-      en: 'Use color and whitespace to guide attention and steady decision rhythm.',
-    },
-  },
-  {
-    id: 'mindfulness-integration',
-    title: { zh: '把練習放進行程表，而非待辦清單', en: 'Schedule practice, not just list it' },
-    category: 'Mindfulness',
-    summary: {
-      zh: '在日程中預留空檔，呼吸、伸展、寫下觀察。',
-      en: 'Reserve calendar pockets for breath, stretch, and notes—beyond a to-do list.',
-    },
-  },
-  {
-    id: 'sap-rpa-bridge',
-    title: { zh: 'SAP × RPA：橋接舊系統與新節奏', en: 'SAP × RPA: Bridging legacy and new cadence' },
-    category: 'Automation',
-    summary: {
-      zh: '在既有權限與例外規則中設計機器人，避免自動化變成另一種技術債。',
-      en: 'Design bots inside existing permissions and exceptions so automation avoids becoming new tech debt.',
-    },
-  },
-  {
-    id: 'powerbi-lineage',
-    title: { zh: 'Power BI 血緣設計：讓語意層站得住', en: 'Power BI lineage that keeps the semantic layer honest' },
-    category: 'Data',
-    summary: {
-      zh: '從資料來源到度量指標畫出血緣，讓管理層理解「這個數字為何可信」。',
-      en: 'Trace lineage from sources to measures so leaders know why a number can be trusted.',
-    },
-  },
-  {
-    id: 'ai-governance-rules',
-    title: { zh: '生成式 AI 的工作規則', en: 'Working rules for generative AI' },
-    category: 'Product',
-    summary: {
-      zh: '定義輸入輸出範圍、回饋 loop 與審核責任，讓 AI 協作有章可循。',
-      en: 'Define input/output bounds, feedback loops, and review accountability so AI collaboration is governed.',
-    },
-  },
-  {
-    id: 'breath-during-reviews',
-    title: { zh: '評審會議裡的呼吸節奏', en: 'Breath patterns inside review meetings' },
-    category: 'Mindfulness',
-    summary: {
-      zh: '用 4-6-8 呼吸在會前穩定神經系統，讓理性討論不被情緒帶走。',
-      en: 'Use 4-6-8 breathing before reviews to steady the nervous system so rational debates stay calm.',
-    },
-  },
-  {
-    id: 'delivery-rituals',
-    title: { zh: '交付儀式：節奏讓透明度成習慣', en: 'Delivery rituals turn transparency into habit' },
-    category: 'Product',
-    summary: {
-      zh: '以週會節奏、決策記錄與可視化看板，避免專案只剩催進度。',
-      en: 'Weekly cadences, decision logs, and visual boards keep projects from devolving into pure chasing.',
-    },
-  },
-  {
-    id: 'automation-handover',
-    title: { zh: '自動化的交接腳本', en: 'Handover scripts for automation' },
-    category: 'Automation',
-    summary: {
-      zh: '寫下故障排除清單與權限矩陣，讓團隊能在無顧問時也能維運。',
-      en: 'Document runbooks and permission matrices so teams can operate without consultants on call.',
-    },
-  },
-  {
-    id: 'mindful-observability',
-    title: { zh: '把可觀測性用在人與系統', en: 'Observability for both systems and people' },
-    category: 'Data',
-    summary: {
-      zh: '建立 log、metrics 與儀表板，同時也留意團隊的專注與疲勞信號。',
-      en: 'Build logs, metrics, and dashboards while watching team focus and fatigue signals.',
-    },
-  },
-  {
-    id: 'seasonal-planning',
-    title: { zh: '以節氣規劃專案節奏', en: 'Plan projects by the seasonal cadence' },
-    category: 'Mindfulness',
-    summary: {
-      zh: '以節氣提醒自己調整衝刺與收斂，避免長期燃燒。',
-      en: 'Use solar terms to alternate between sprint and consolidation to avoid long-term burnout.',
-    },
-  },
-  {
-    id: 'leadership-language',
-    title: { zh: '讓領導聽懂技術，讓工程師聽懂策略', en: 'Translate strategy for engineers and tech for leaders' },
-    category: 'Product',
-    summary: {
-      zh: '用決策表與路線圖翻譯各方語言，減少誤會與反覆返工。',
-      en: 'Decision tables and roadmaps translate across roles, cutting misalignment and rework.',
-    },
-  },
-  {
-    id: 'resonant-data-stories',
-    title: { zh: '會說話的儀表板', en: 'Dashboards that speak in stories' },
-    category: 'Data',
-    summary: {
-      zh: '把指標與實際現場的故事連結，讓數據不只是圖表而是行動指引。',
-      en: 'Tie metrics to frontline stories so charts turn into guidance, not decoration.',
-    },
+    tags: ['睡前', '落地', '心浮'],
+    readTime: '5 分鐘',
   },
 ];
+
+export const categories: Category[] = ['節氣筆記', '呼吸與覺察', '修行困惑', '生活整合'];
