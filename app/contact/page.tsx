@@ -1,21 +1,16 @@
 'use client';
 
 import { Hero } from '../components/Hero';
-import { useLanguage } from '../components/LanguageContext';
+
+const purposes = ['合作', '授課', '分享'] as const;
 
 export default function ContactPage() {
-  const { language } = useLanguage();
-
   return (
     <div className="section-shell flex flex-col gap-10">
       <Hero
-        eyebrow={language === 'zh' ? 'Contact / 聯絡' : 'Contact'}
-        title={language === 'zh' ? '聊聊你的專案與節奏' : 'Let’s align on your project and rhythm'}
-        subtitle={
-          language === 'zh'
-            ? '無論是系統導入、流程優化，或是希望建立團隊的身心節奏，都可以先寫下你的想法。'
-            : 'Write a few lines about your systems, automation, or the team rhythm you want to build.'
-        }
+        eyebrow="聯絡"
+        title="合作、授課或分享，請留下訊息"
+        subtitle="內容為身心練習分享，不替代專業醫療或心理治療。若有症狀，請優先尋求專業協助。"
         background="tech"
       />
 
@@ -23,8 +18,8 @@ export default function ContactPage() {
         <form className="card-surface p-6 md:col-span-2 flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <label className="flex flex-col gap-2 text-sm text-slate-700">
-              {language === 'zh' ? '你的名字' : 'Your name'}
-              <input type="text" placeholder={language === 'zh' ? '王小橋' : 'Your name'} />
+              你的名字
+              <input type="text" placeholder="王小橋" />
             </label>
             <label className="flex flex-col gap-2 text-sm text-slate-700">
               Email
@@ -32,34 +27,33 @@ export default function ContactPage() {
             </label>
           </div>
           <label className="flex flex-col gap-2 text-sm text-slate-700">
-            {language === 'zh' ? '主題' : 'Topic'}
-            <select>
-              <option>{language === 'zh' ? '系統導入 / 流程' : 'Systems / Process'}</option>
-              <option>{language === 'zh' ? '自動化 / RPA' : 'Automation / RPA'}</option>
-              <option>{language === 'zh' ? '資料視覺化 / Power BI' : 'Data / Power BI'}</option>
-              <option>{language === 'zh' ? '覺察與練習' : 'Mindfulness practice'}</option>
-            </select>
+            聯絡目的
+            <div className="flex flex-wrap gap-2">
+              {purposes.map((purpose) => (
+                <button key={purpose} type="button" className="tag-pill hover:border-tech-300 hover:text-tech-700">
+                  {purpose}
+                </button>
+              ))}
+            </div>
           </label>
           <label className="flex flex-col gap-2 text-sm text-slate-700">
-            {language === 'zh' ? '想聊的內容' : 'What would you like to discuss?'}
-            <textarea rows={4} placeholder={language === 'zh' ? '描述你的現況與期待…' : 'Describe your context and hopes…'} />
+            想聊的內容
+            <textarea rows={4} placeholder="請描述你目前的需要、時程或期待…" />
           </label>
           <button type="button" className="primary self-start">
-            {language === 'zh' ? '送出（示意）' : 'Send (UI only)'}
+            送出（UI 示意）
           </button>
         </form>
 
         <div className="card-surface p-6 flex flex-col gap-4">
-          <h3 className="text-lg font-semibold text-slate-900">{language === 'zh' ? '社群與頻道' : 'Social'}</h3>
-          <p className="text-sm text-slate-700">
-            {language === 'zh'
-              ? '留下你的節奏偏好，我會不定期分享流程與身心練習的筆記。'
-              : 'Tell me your rhythm preference. I share notes on systems and practice occasionally.'}
+          <h3 className="text-lg font-semibold text-slate-900">溫柔提醒</h3>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            我提供的是呼吸、節氣觀修、瑜珈與冥想的引導與筆記分享；任何與醫療或診斷相關的需求，請與專業醫師或治療師聯繫。
           </p>
           <div className="flex flex-col gap-3 text-sm text-slate-700">
-            <a className="tag-pill hover:border-tech-300 hover:text-tech-700" href="#">LinkedIn</a>
-            <a className="tag-pill hover:border-tech-300 hover:text-tech-700" href="#">Newsletter</a>
-            <a className="tag-pill hover:border-tech-300 hover:text-tech-700" href="#">Podcast</a>
+            <span className="tag-pill">回覆時間：2–3 個工作日內</span>
+            <span className="tag-pill">建議先附上你的時區與可通話時段</span>
+            <span className="tag-pill">合作可提供中文 / English</span>
           </div>
         </div>
       </div>

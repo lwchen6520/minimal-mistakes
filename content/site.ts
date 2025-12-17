@@ -1,121 +1,81 @@
 export type Language = 'zh' | 'en';
 
 export const taglines = {
-  zh: '讓理性的系統清楚透明，也讓內在的修行落在日常。',
-  en: 'Make systems transparent and keep practice grounded in daily life.',
+  zh: '把修行變成日常，把日常變成修行。',
+  en: 'Practice daily. Live gently. Stay grounded.',
 };
 
-export const howIWork = [
+export const navLinks = [
+  { href: '/', key: 'home', zh: '首頁', en: 'Home' },
+  { href: '/daily-practice', key: 'daily', zh: '每日練習', en: 'Daily practice' },
+  { href: '/solar-terms', key: 'solar', zh: '節氣', en: 'Solar terms' },
+  { href: '/practice-library', key: 'library', zh: '練習庫', en: 'Library' },
+  { href: '/writing', key: 'writing', zh: '修行筆記', en: 'Writing' },
+  { href: '/about', key: 'about', zh: '關於', en: 'About' },
+  { href: '/contact', key: 'contact', zh: '聯絡', en: 'Contact' },
+];
+
+export const methodFlow = [
   {
-    key: 'discover',
-    zh: { title: 'Discover', description: '與決策者、工程師與使用者共筆問題陳述，讓語言先對齊。' },
-    en: {
-      title: 'Discover',
-      description: 'Co-write the problem with leaders, engineers, and users so language is aligned first.',
-    },
+    key: 'observe',
+    zh: { title: 'Observe 觀', description: '先停一停，感受呼吸、體表溫度、節氣的細微變化，讓訊號浮出來。' },
+    en: { title: 'Observe', description: 'Pause for breath, surface sensations, and seasonal shifts so signals appear.' },
   },
   {
-    key: 'design',
-    zh: { title: 'Design', description: '畫出流程、資料與權限的節奏，也標注專注與覺察需要被維護的點。' },
-    en: {
-      title: 'Design',
-      description: 'Map process, data, and permissions, noting where focus and awareness must be protected.',
-    },
+    key: 'regulate',
+    zh: { title: 'Regulate 調', description: '用最小可行的呼吸與伸展，讓神經系統回到舒適區，再決定下一步。' },
+    en: { title: 'Regulate', description: 'Use minimal breath and stretch to bring the nervous system home before acting.' },
   },
   {
-    key: 'deliver',
-    zh: {
-      title: 'Deliver',
-      description: '敏捷迭代導入自動化與儀表板，同步安排團隊節奏與覺察練習。',
-    },
-    en: {
-      title: 'Deliver',
-      description: 'Ship automation and dashboards in agile loops while setting team rituals for awareness.',
-    },
+    key: 'integrate',
+    zh: { title: 'Integrate 融', description: '把練習放進行程與習慣堆疊，讓覺察與工作、家務、社交並行。' },
+    en: { title: 'Integrate', description: 'Stack practice onto routines so awareness travels with work, chores, and community.' },
   },
   {
-    key: 'debrief',
-    zh: {
-      title: 'Debrief',
-      description: '複盤決策、記錄例外與感受，讓系統與人都能在可持續的節奏中呼吸。',
-    },
-    en: {
-      title: 'Debrief',
-      description: 'Review decisions, document exceptions and sensations, so systems and people breathe sustainably.',
-    },
+    key: 'return',
+    zh: { title: 'Return 回', description: '以溫柔的檢視收尾，允許遺漏，記下訊號，明天再回來。' },
+    en: { title: 'Return', description: 'Close gently, allow misses, log signals, and return tomorrow.' },
   },
 ];
 
-export const aboutSections = {
+export const aboutStory = {
   zh: [
     {
-      title: '橋接理性與修行',
+      title: '我如何走向修行',
       body:
-        '我是一位橫跨理性系統與內在修行的橋接者。科技不只是工具，靈性也不是逃避；兩邊都需要耐心與紀律，才能被整合進日常工作與生活。',
+        '從企業系統與專案管理走進瑜珈、冥想與節氣觀修，我學會把龐雜的方法拆成可被日常承載的小步。沒有華麗的轉折，只有一次次回到呼吸、回到身體。',
     },
     {
-      title: '專業與方法',
+      title: '我如何把修行變成日常',
       body:
-        '關心 SAP、RPA、Power BI、AI 認證與系統導入，問的總是「為什麼這樣設計」「可否擴充」「管理層如何理解」。重視可交付物、節奏與里程碑，也重視語言是否讓不同角色真正聽懂。',
+        '用議程、提醒與節奏設計，讓練習變成 5–15 分鐘的可執行模組。觀察－調節－整合－回顧，就像專案節點，也像日常的呼吸流。',
     },
     {
-      title: '節氣與覺知',
+      title: '我如何陪伴初學者',
       body:
-        '對時間、節氣、身體與意識敏銳，關注 24 節氣、臟腑、呼吸、瑜珈與藏傳佛教次第。不是浪漫式收集，而是要求結構化、可實修、可落地，讓練習能被日常承載。',
+        '不診斷、不替代醫療；我提供溫柔且清晰的指引，協助你找到身體與情緒的可操作線索，並設計練習邊界，避免過度努力或自責。',
     },
   ],
   en: [
     {
-      title: 'Bridge systems and practice',
+      title: 'How I arrived',
       body:
-        'A bridge between rational systems and inner work. Technology is more than tools and spirituality is not an escape—both need patience and discipline to live in daily work.',
+        'From enterprise systems into yoga, meditation, and seasonal study, I learned to slice huge methods into daily steps—always returning to breath and body.',
     },
     {
-      title: 'Methods and delivery',
+      title: 'How I keep it daily',
       body:
-        'Focused on SAP, RPA, Power BI, and AI rollouts, always asking “why this design,” “can it scale,” and “will leadership understand.” I care about deliverables, cadence, and milestones—and making sure every role truly hears each other.',
+        'Agendas, reminders, and cadence design turn practice into 5–15 minute modules. Observe–Regulate–Integrate–Return becomes both project rhythm and breathwork.',
     },
     {
-      title: 'Seasonal awareness',
+      title: 'How I accompany beginners',
       body:
-        'Sensitive to time, solar terms, body, and awareness. I study the 24 solar terms, organs, breathwork, yoga, and Tibetan Buddhist progressions—not as romantic collecting but as structured, practicable routines that daily life can hold.',
+        'No diagnosis, no replacing medical care. I offer gentle, precise cues so you can act on body and emotion signals, with boundaries that prevent over-effort or blame.',
     },
   ],
 };
 
-export const timeline = [
-  {
-    year: '2016',
-    zh: '在大型製造業擔任 PM，負責 SAP 模組整合，體會到流程與語言一致的重要性。',
-    en: 'PM at a major manufacturer, aligning SAP modules and seeing how process clarity relies on shared language.',
-  },
-  {
-    year: '2019',
-    zh: '帶領跨部門導入 RPA 與報表自動化，設計例外與權限治理，讓月結時間縮短 30%。',
-    en: 'Led cross-functional RPA and reporting automation with exception and permission design, cutting month-end by 30%.',
-  },
-  {
-    year: '2021',
-    zh: '建立 Power BI 語意層與資料治理框架，協助管理層理解指標的血緣與可信度。',
-    en: 'Built Power BI semantic layers and governance, helping leadership trust metric lineage and credibility.',
-  },
-  {
-    year: '2023',
-    zh: '研究生成式 AI 在文件與流程的落地，設計小型代理與回饋 loop，讓協作有責任界線。',
-    en: 'Explored generative AI for documents and workflows, designing lightweight agents and feedback loops with clear accountability.',
-  },
-  {
-    year: '修行路',
-    zh: '十年瑜珈與靜心練習，研究藏傳佛教次第，也帶領週末覺察小組，讓節奏回到呼吸與生活。',
-    en: 'Ten years of yoga and mindfulness, studying Tibetan Buddhist progressions and leading awareness circles so rhythm returns to breath and daily life.',
-  },
-];
-
-export const navLinks = [
-  { href: '/', key: 'home', zh: '首頁', en: 'Home' },
-  { href: '/work', key: 'work', zh: 'Systems', en: 'Systems' },
-  { href: '/practice', key: 'practice', zh: 'Practice', en: 'Practice' },
-  { href: '/writing', key: 'writing', zh: 'Writing', en: 'Writing' },
-  { href: '/about', key: 'about', zh: '關於', en: 'About' },
-  { href: '/contact', key: 'contact', zh: '聯絡', en: 'Contact' },
-];
+export const backgroundNote = {
+  zh: '背景：PM / 系統 / 自動化。善於把複雜流程拆解成可復用的節奏，也在禪修與瑜珈中累積十年以上，重視可觀察與可持續。',
+  en: 'PM / systems / automation background—skilled at modularizing complex flows, with 10+ years in meditation and yoga focused on observability and sustainability.',
+};

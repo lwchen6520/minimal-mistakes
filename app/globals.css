@@ -8,8 +8,9 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at 20% 20%, rgba(74, 127, 224, 0.07), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(245, 138, 79, 0.08), transparent 28%),
+  background: radial-gradient(circle at 20% 20%, rgba(112, 141, 196, 0.08), transparent 32%),
+    radial-gradient(circle at 80% 10%, rgba(240, 171, 133, 0.08), transparent 32%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.03), rgba(15, 23, 42, 0.01)),
     #f8fafc;
   color: #0f172a;
 }
@@ -27,11 +28,11 @@ body {
 }
 
 .soft-gradient-tech {
-  background: linear-gradient(135deg, rgba(74, 127, 224, 0.1), rgba(35, 59, 105, 0.05));
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.09), rgba(35, 59, 105, 0.05));
 }
 
 .soft-gradient-warm {
-  background: linear-gradient(135deg, rgba(245, 138, 79, 0.1), rgba(115, 56, 33, 0.05));
+  background: linear-gradient(135deg, rgba(245, 138, 79, 0.1), rgba(115, 56, 33, 0.04));
 }
 
 svg.pattern {
@@ -39,7 +40,9 @@ svg.pattern {
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   @apply rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-tech-300 focus:border-transparent transition;
 }
 
@@ -53,4 +56,19 @@ button.secondary {
 
 .tag-pill {
   @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200;
+}
+
+.reveal {
+  animation: breathe 1.2s ease-in-out both;
+}
+
+@keyframes breathe {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

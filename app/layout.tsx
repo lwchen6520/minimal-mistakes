@@ -5,15 +5,14 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
 export const metadata: Metadata = {
-  title: '橋接系統與覺知 | Bridge',
-  description:
-    '橫跨理性系統與內在修行：熟悉 SAP / RPA / Power BI / AI，重視可交付節奏，也關注呼吸與節氣的覺察。',
+  title: '把修行變成日常 | Liv Jaijot Kaur (Sonia Chen)',
+  description: '溫柔而有結構的修行引導：每日練習、節氣身體感、呼吸與冥想、修行筆記，陪你把練習放進生活。',
   openGraph: {
-    title: '橋接系統與覺知 | Bridge',
+    title: '把修行變成日常 | Liv Jaijot Kaur (Sonia Chen)',
     description:
-      '理性與靈性並行：設計流程與語意層，導入自動化與儀表板，也設計能落地的覺察練習。',
+      '正念呼吸、節氣觀修、瑜珈冥想入門、修行筆記。以成熟且穩定的節奏，讓練習可持續、可整合。',
     url: 'https://example.com',
-    siteName: 'Bridge',
+    siteName: 'Daily Practice by Liv',
     locale: 'zh-TW',
     type: 'website',
   },
