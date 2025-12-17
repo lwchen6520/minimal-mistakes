@@ -1,30 +1,26 @@
 'use client';
 
+import { useState } from 'react';
 import { Hero } from '../components/Hero';
-import { useLanguage } from '../components/LanguageContext';
 
 export default function ContactPage() {
-  const { language } = useLanguage();
+  const [purpose, setPurpose] = useState('合作');
 
   return (
     <div className="section-shell flex flex-col gap-10">
       <Hero
-        eyebrow={language === 'zh' ? 'Contact / 聯絡' : 'Contact'}
-        title={language === 'zh' ? '聊聊你的專案與節奏' : 'Let’s align on your project and rhythm'}
-        subtitle={
-          language === 'zh'
-            ? '無論是系統導入、流程優化，或是希望建立團隊的身心節奏，都可以先寫下你的想法。'
-            : 'Write a few lines about your systems, automation, or the team rhythm you want to build.'
-        }
-        background="tech"
+        eyebrow="Contact / 聯絡"
+        title="溫柔但清晰的聯繫"
+        subtitle="留下你的需求與期待。無論是合作、授課或分享，我會以穩定的節奏回覆，也提醒：內容為身心練習分享，不替代專業醫療或心理治療。"
+        background="warmth"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <form className="card-surface p-6 md:col-span-2 flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <label className="flex flex-col gap-2 text-sm text-slate-700">
-              {language === 'zh' ? '你的名字' : 'Your name'}
-              <input type="text" placeholder={language === 'zh' ? '王小橋' : 'Your name'} />
+              你的名字
+              <input type="text" placeholder="你希望被怎麼稱呼" />
             </label>
             <label className="flex flex-col gap-2 text-sm text-slate-700">
               Email
@@ -32,34 +28,48 @@ export default function ContactPage() {
             </label>
           </div>
           <label className="flex flex-col gap-2 text-sm text-slate-700">
-            {language === 'zh' ? '主題' : 'Topic'}
-            <select>
-              <option>{language === 'zh' ? '系統導入 / 流程' : 'Systems / Process'}</option>
-              <option>{language === 'zh' ? '自動化 / RPA' : 'Automation / RPA'}</option>
-              <option>{language === 'zh' ? '資料視覺化 / Power BI' : 'Data / Power BI'}</option>
-              <option>{language === 'zh' ? '覺察與練習' : 'Mindfulness practice'}</option>
-            </select>
+            聯絡目的
+            <div className="flex flex-wrap gap-2">
+              {['合作', '授課', '分享'].map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setPurpose(item)}
+                  className={`px-3 py-1 rounded-full text-xs font-semibold border transition ${
+                    purpose === item
+                      ? 'bg-tech-700 text-white border-tech-700 shadow-subtle'
+                      : 'bg-white text-slate-700 border-slate-200 hover:border-tech-200'
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </label>
           <label className="flex flex-col gap-2 text-sm text-slate-700">
-            {language === 'zh' ? '想聊的內容' : 'What would you like to discuss?'}
-            <textarea rows={4} placeholder={language === 'zh' ? '描述你的現況與期待…' : 'Describe your context and hopes…'} />
+            想聊的內容
+            <textarea rows={4} placeholder="描述你的時間、需求、受眾或想解決的困惑…" />
           </label>
-          <button type="button" className="primary self-start">
-            {language === 'zh' ? '送出（示意）' : 'Send (UI only)'}
-          </button>
+          <label className="flex flex-col gap-2 text-sm text-slate-700">
+            任何備註
+            <textarea rows={3} placeholder="例如：偏好的聯絡時間、是否需要線上 / 實體" />
+          </label>
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <p className="text-xs text-slate-500">內容為身心練習分享，不替代專業醫療或心理治療。</p>
+            <button type="button" className="primary">
+              送出訊息（示意）
+            </button>
+          </div>
         </form>
 
         <div className="card-surface p-6 flex flex-col gap-4">
-          <h3 className="text-lg font-semibold text-slate-900">{language === 'zh' ? '社群與頻道' : 'Social'}</h3>
-          <p className="text-sm text-slate-700">
-            {language === 'zh'
-              ? '留下你的節奏偏好，我會不定期分享流程與身心練習的筆記。'
-              : 'Tell me your rhythm preference. I share notes on systems and practice occasionally.'}
+          <h3 className="text-lg font-semibold text-slate-900">我會怎麼回覆</h3>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            你的訊息會在 1-2 個工作天內得到回覆。若需要安排體驗式分享或企業內訓，會先確認需求、時間與安全界線，才提供建議的節奏與大綱。
           </p>
-          <div className="flex flex-col gap-3 text-sm text-slate-700">
-            <a className="tag-pill hover:border-tech-300 hover:text-tech-700" href="#">LinkedIn</a>
-            <a className="tag-pill hover:border-tech-300 hover:text-tech-700" href="#">Newsletter</a>
-            <a className="tag-pill hover:border-tech-300 hover:text-tech-700" href="#">Podcast</a>
+          <div className="rounded-2xl bg-white/80 border border-slate-200 p-4 shadow-subtle">
+            <p className="text-xs uppercase tracking-wide text-slate-500">界線提醒</p>
+            <p className="text-sm text-slate-700 mt-2">我不提供診斷或醫療建議，所有練習以溫和、可撤退為原則。</p>
           </div>
         </div>
       </div>

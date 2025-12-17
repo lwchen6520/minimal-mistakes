@@ -2,70 +2,55 @@
 
 import { useMemo, useState } from 'react';
 import { posts } from '@/content/posts';
-import { Hero } from '../components/Hero';
 import { Card } from '../components/Card';
 import { SearchBox } from '../components/SearchBox';
-import { useLanguage } from '../components/LanguageContext';
 
-const categories = ['All', 'Product', 'Automation', 'Data', 'Mindfulness'] as const;
+const categories = ['全部', '節氣筆記', '呼吸與覺察', '修行困惑', '生活整合'] as const;
 type Category = (typeof categories)[number];
 
-const categoryLabels: Record<Category, { zh: string; en: string }> = {
-  All: { zh: '全部', en: 'All' },
-  Product: { zh: '產品', en: 'Product' },
-  Automation: { zh: '自動化', en: 'Automation' },
-  Data: { zh: '資料', en: 'Data' },
-  Mindfulness: { zh: '覺察', en: 'Mindfulness' },
-};
-
 export default function WritingPage() {
-  const { language } = useLanguage();
   const [query, setQuery] = useState('');
-  const [category, setCategory] = useState<Category>('All');
+  const [category, setCategory] = useState<Category>('全部');
 
   const filtered = useMemo(() => {
     return posts.filter((post) => {
-      const matchesCategory = category === 'All' || post.category === category;
-      const text = `${post.title[language]} ${post.summary[language]}`.toLowerCase();
+      const matchesCategory = category === '全部' || post.category === category;
+      const text = `${post.title.zh} ${post.summary.zh}`.toLowerCase();
       const matchesQuery = text.includes(query.toLowerCase());
       return matchesCategory && matchesQuery;
     });
-  }, [category, language, query]);
+  }, [category, query]);
 
   return (
     <div className="section-shell flex flex-col gap-10">
-      <Hero
-        eyebrow={language === 'zh' ? 'Writing / 筆記' : 'Writing'}
-        title={language === 'zh' ? '把經驗寫成可複用的模組' : 'Write modules others can reuse'}
-        subtitle={
-          language === 'zh'
-            ? '產品、流程、自動化、資料、覺察，全部用可驗證的語言記錄。'
-            : 'Product, process, automation, data, mindfulness—captured in clear, verifiable language.'
-        }
-      />
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-        <div className="md:col-span-2">
-          <SearchBox
-            value={query}
-            onChange={setQuery}
-            placeholder={language === 'zh' ? '搜尋標題或摘要' : 'Search title or summary'}
-          />
-        </div>
-        <div className="flex flex-wrap gap-2 md:justify-end">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setCategory(cat)}
-              className={`px-3 py-1 rounded-full border text-xs font-semibold transition ${
-                category === cat
-                  ? 'bg-tech-600 text-white border-tech-600 shadow-subtle'
-                  : 'bg-white text-slate-700 border-slate-200 hover:border-tech-300 hover:text-tech-700'
-              }`}
-            >
-              {categoryLabels[cat][language]}
-            </button>
-          ))}
+      <div className="relative overflow-hidden rounded-3xl border border-slate-100 shadow-subtle bg-white/80 p-8 sm:p-12">
+        <div className="absolute inset-0 bg-grid-tech opacity-60" aria-hidden style={{ backgroundSize: '30px 30px' }} />
+        <div className="relative flex flex-col gap-3">
+          <p className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 w-fit">
+            Writing / 修行筆記
+          </p>
+          <h1 className="text-3xl font-semibold text-slate-900">把修行寫成可操作的筆記</h1>
+          <p className="text-slate-700 max-w-3xl leading-relaxed">
+            類別包含節氣筆記、呼吸與覺察、修行困惑、生活整合。每篇都有摘要、閱讀時間與 tags，方便快速找到需要的提醒。
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
+            <SearchBox value={query} onChange={setQuery} placeholder="搜尋標題、摘要或 tags" />
+            <div className="md:col-span-2 flex flex-wrap gap-2 md:justify-end">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setCategory(cat)}
+                  className={`px-3 py-1 rounded-full text-xs font-semibold border transition ${
+                    category === cat
+                      ? 'bg-tech-700 text-white border-tech-700 shadow-subtle'
+                      : 'bg-white text-slate-700 border-slate-200 hover:border-tech-200'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -73,12 +58,12 @@ export default function WritingPage() {
         {filtered.map((post) => (
           <Card
             key={post.id}
-            title={post.title[language]}
-            description={post.summary[language]}
+            title={post.title.zh}
+            description={`${post.summary.zh}｜${post.readTime}`}
             tone="tech"
-            tags={[categoryLabels[post.category][language]]}
+            tags={post.tags}
           >
-            <button className="primary">{language === 'zh' ? '閱讀筆記（示意）' : 'Read note (UI)'}</button>
+            <button className="primary">閱讀筆記（示意）</button>
           </Card>
         ))}
       </div>
